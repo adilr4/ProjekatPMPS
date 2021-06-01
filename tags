@@ -1,0 +1,144 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_OUTPUT_MODE	u-ctags	/u-ctags or e-ctags/
+!_TAG_PROGRAM_AUTHOR	Universal Ctags Team	//
+!_TAG_PROGRAM_NAME	Universal Ctags	/Derived from Exuberant Ctags/
+!_TAG_PROGRAM_URL	https://ctags.io/	/official site/
+!_TAG_PROGRAM_VERSION	0.0.0	/84dbaf52/
+$(PROJ_NAME).elf	Makefile	/^$(PROJ_NAME).elf: $(SRCS)$/;"	t
+AHBPrescTable	system_stm32f4xx.c	/^  const uint8_t AHBPrescTable[16] = {0, 0, 0, 0, 0, 0, 0, 0, 1, 2, 3, 4, 6, 7, 8, 9};$/;"	v	typeref:typename:const uint8_t[16]
+APBPrescTable	system_stm32f4xx.c	/^const uint8_t APBPrescTable[8]  = {0, 0, 0, 0, 1, 2, 3, 4};$/;"	v	typeref:typename:const uint8_t[8]
+BusFault_Handler	stm32f4xx_it.c	/^void BusFault_Handler(void)$/;"	f	typeref:typename:void
+CC	Makefile	/^CC = $(GNUGCC)\/arm-none-eabi-gcc$/;"	m
+CFLAGS	Makefile	/^CFLAGS  = -g -O2 -Wall -Tstm32_flash.ld $/;"	m
+CLEAR_BIT	stm32f4xx.h	/^#define CLEAR_BIT(/;"	d
+CLEAR_REG	stm32f4xx.h	/^#define CLEAR_REG(/;"	d
+DISABLE	stm32f4xx.h	/^  DISABLE = 0U, $/;"	e	enum:__anon4db1579e0203
+DebugMon_Handler	stm32f4xx_it.c	/^void DebugMon_Handler(void)$/;"	f	typeref:typename:void
+ENABLE	stm32f4xx.h	/^  ENABLE = !DISABLE$/;"	e	enum:__anon4db1579e0203
+ERROR	stm32f4xx.h	/^  ERROR = !SUCCESS$/;"	e	enum:__anon4db1579e0303
+ErrorStatus	stm32f4xx.h	/^} ErrorStatus;$/;"	t	typeref:enum:__anon4db1579e0303
+FlagStatus	stm32f4xx.h	/^} FlagStatus, ITStatus;$/;"	t	typeref:enum:__anon4db1579e0103
+FunctionalState	stm32f4xx.h	/^} FunctionalState;$/;"	t	typeref:enum:__anon4db1579e0203
+GNUGCC	Makefile	/^GNUGCC = $(STM_COMMON)\/gcc-arm-none-eabi\/bin$/;"	m
+HardFault_Handler	stm32f4xx_it.c	/^void HardFault_Handler(void)$/;"	f	typeref:typename:void
+IS_FUNCTIONAL_STATE	stm32f4xx.h	/^#define IS_FUNCTIONAL_STATE(/;"	d
+ITStatus	stm32f4xx.h	/^} FlagStatus, ITStatus;$/;"	t	typeref:enum:__anon4db1579e0103
+MAX_PRINT_STRING_SIZE	misc.h	/^#define MAX_PRINT_STRING_SIZE	/;"	d
+MODIFY_REG	stm32f4xx.h	/^#define MODIFY_REG(/;"	d
+MemManage_Handler	stm32f4xx_it.c	/^void MemManage_Handler(void)$/;"	f	typeref:typename:void
+NMI_Handler	stm32f4xx_it.c	/^void NMI_Handler(void)$/;"	f	typeref:typename:void
+OBJCOPY	Makefile	/^OBJCOPY = $(GNUGCC)\/arm-none-eabi-objcopy$/;"	m
+OBJS	Makefile	/^OBJS = $(SRCS:.c=.o)$/;"	m
+ORIGIN	stm32_flash.ld	/^  FLASH (rx)      : ORIGIN = 0x08000000, LENGTH = 1024K$/;"	s
+PLL_M	system_stm32f4xx.c	/^#define PLL_M /;"	d	file:
+PLL_N	system_stm32f4xx.c	/^#define PLL_N /;"	d	file:
+PLL_P	system_stm32f4xx.c	/^#define PLL_P /;"	d	file:
+PLL_Q	system_stm32f4xx.c	/^#define PLL_Q /;"	d	file:
+POSITION_VAL	stm32f4xx.h	/^#define POSITION_VAL(/;"	d
+PRINT_ARG_TYPE_BINARY_BYTE	misc.h	/^#define PRINT_ARG_TYPE_BINARY_BYTE	/;"	d
+PRINT_ARG_TYPE_BINARY_HALFWORD	misc.h	/^#define PRINT_ARG_TYPE_BINARY_HALFWORD	/;"	d
+PRINT_ARG_TYPE_BINARY_WORD	misc.h	/^#define PRINT_ARG_TYPE_BINARY_WORD	/;"	d
+PRINT_ARG_TYPE_CHARACTER	misc.h	/^#define PRINT_ARG_TYPE_CHARACTER	/;"	d
+PRINT_ARG_TYPE_DECIMAL_BYTE	misc.h	/^#define PRINT_ARG_TYPE_DECIMAL_BYTE	/;"	d
+PRINT_ARG_TYPE_DECIMAL_HALFWORD	misc.h	/^#define PRINT_ARG_TYPE_DECIMAL_HALFWORD	/;"	d
+PRINT_ARG_TYPE_DECIMAL_WORD	misc.h	/^#define PRINT_ARG_TYPE_DECIMAL_WORD	/;"	d
+PRINT_ARG_TYPE_FLOAT	misc.h	/^#define PRINT_ARG_TYPE_FLOAT	/;"	d
+PRINT_ARG_TYPE_HEXADECIMAL_BYTE	misc.h	/^#define PRINT_ARG_TYPE_HEXADECIMAL_BYTE	/;"	d
+PRINT_ARG_TYPE_HEXADECIMAL_HALFWORD	misc.h	/^#define PRINT_ARG_TYPE_HEXADECIMAL_HALFWORD	/;"	d
+PRINT_ARG_TYPE_HEXADECIMAL_WORD	misc.h	/^#define PRINT_ARG_TYPE_HEXADECIMAL_WORD	/;"	d
+PRINT_ARG_TYPE_MASK_CHAR_STRING	misc.h	/^#define PRINT_ARG_TYPE_MASK_CHAR_STRING	/;"	d
+PRINT_ARG_TYPE_STRING	misc.h	/^#define PRINT_ARG_TYPE_STRING	/;"	d
+PRINT_ARG_TYPE_UNKNOWN	misc.h	/^#define PRINT_ARG_TYPE_UNKNOWN	/;"	d
+PROJ_NAME	Makefile	/^PROJ_NAME=main$/;"	m
+PendSV_Handler	stm32f4xx_it.c	/^void PendSV_Handler(void)$/;"	f	typeref:typename:void
+READ_BIT	stm32f4xx.h	/^#define READ_BIT(/;"	d
+READ_REG	stm32f4xx.h	/^#define READ_REG(/;"	d
+RESET	stm32f4xx.h	/^  RESET = 0U, $/;"	e	enum:__anon4db1579e0103
+SET	stm32f4xx.h	/^  SET = !RESET$/;"	e	enum:__anon4db1579e0103
+SET_BIT	stm32f4xx.h	/^#define SET_BIT(/;"	d
+SIZE	Makefile	/^SIZE =  $(GNUGCC)\/arm-none-eabi-size$/;"	m
+SRCS	Makefile	/^SRCS = main.c $/;"	m
+STLINK	Makefile	/^STLINK=..\/..\/stlink$/;"	m
+STM32CUBEPROG	Makefile	/^STM32CUBEPROG:= ..\/..\/stmcubeprog\/bin\/STM32_Programmer.sh -vb 1 -q -c port=SWD $/;"	m
+STM32F4	stm32f4xx.h	/^#define STM32F4$/;"	d
+STM32F407xx	stm32f4xx.h	/^  #define STM32F407xx /;"	d
+STM_COMMON	Makefile	/^STM_COMMON=..\/..\/sdk$/;"	m
+SUCCESS	stm32f4xx.h	/^  SUCCESS = 0U,$/;"	e	enum:__anon4db1579e0303
+SVC_Handler	stm32f4xx_it.c	/^void SVC_Handler(void)$/;"	f	typeref:typename:void
+SYSTIM_KEEP_ALIVE	delay.h	/^#define SYSTIM_KEEP_ALIVE	/;"	d
+SYSTIM_TIMEOUT	delay.h	/^#define SYSTIM_TIMEOUT	/;"	d
+SetSysClock	system_stm32f4xx.c	/^static void SetSysClock(void)$/;"	f	typeref:typename:void	file:
+SysTick_Handler	stm32f4xx_it.c	/^void SysTick_Handler(void)$/;"	f	typeref:typename:void
+SystemCoreClock	system_stm32f4xx.c	/^  uint32_t SystemCoreClock = 168000000;$/;"	v	typeref:typename:uint32_t
+SystemCoreClockUpdate	system_stm32f4xx.c	/^void SystemCoreClockUpdate(void)$/;"	f	typeref:typename:void
+SystemInit	system_stm32f4xx.c	/^void SystemInit(void)$/;"	f	typeref:typename:void
+SystemInit_ExtMemCtl	system_stm32f4xx.c	/^void SystemInit_ExtMemCtl(void)$/;"	f	typeref:typename:void
+TIM2_HandleStruct	delay.c	/^TIM_HandleTypeDef TIM2_HandleStruct;$/;"	v	typeref:typename:TIM_HandleTypeDef
+TIM4_HandleStruct	pwm.c	/^TIM_HandleTypeDef TIM4_HandleStruct;$/;"	v	typeref:typename:TIM_HandleTypeDef
+TIM_HandleStruct	delay.c	/^TIM_HandleTypeDef TIM_HandleStruct;$/;"	v	typeref:typename:TIM_HandleTypeDef
+UART_HandleStruct	usart.c	/^UART_HandleTypeDef UART_HandleStruct;$/;"	v	typeref:typename:UART_HandleTypeDef
+USART_115200	usart.h	/^#define USART_115200	/;"	d
+USART_9600	usart.h	/^#define USART_9600	/;"	d
+UsageFault_Handler	stm32f4xx_it.c	/^void UsageFault_Handler(void)$/;"	f	typeref:typename:void
+VECT_TAB_OFFSET	system_stm32f4xx.c	/^#define VECT_TAB_OFFSET /;"	d	file:
+WRITE_REG	stm32f4xx.h	/^#define WRITE_REG(/;"	d
+_Min_Heap_Size	stm32_flash.ld	/^_Min_Heap_Size = 0;      \/* required amount of heap  *\/$/;"	s
+_Min_Stack_Size	stm32_flash.ld	/^_Min_Stack_Size = 0x400; \/* required amount of stack *\/$/;"	s
+__ADC_H	adc.h	/^#define __ADC_H /;"	d
+__DELAY_H	delay.h	/^#define __DELAY_H$/;"	d
+__MISC_H_	misc.h	/^#define __MISC_H_$/;"	d
+__PWM_H	pwm.h	/^#define __PWM_H$/;"	d
+__STM32F4xx_CMSIS_VERSION	stm32f4xx.h	/^#define __STM32F4xx_CMSIS_VERSION /;"	d
+__STM32F4xx_CMSIS_VERSION_MAIN	stm32f4xx.h	/^#define __STM32F4xx_CMSIS_VERSION_MAIN /;"	d
+__STM32F4xx_CMSIS_VERSION_RC	stm32f4xx.h	/^#define __STM32F4xx_CMSIS_VERSION_RC /;"	d
+__STM32F4xx_CMSIS_VERSION_SUB1	stm32f4xx.h	/^#define __STM32F4xx_CMSIS_VERSION_SUB1 /;"	d
+__STM32F4xx_CMSIS_VERSION_SUB2	stm32f4xx.h	/^#define __STM32F4xx_CMSIS_VERSION_SUB2 /;"	d
+__STM32F4xx_H	stm32f4xx.h	/^#define __STM32F4xx_H$/;"	d
+__STM32F4xx_IT_H	stm32f4xx_it.h	/^#define __STM32F4xx_IT_H$/;"	d
+__USART2_H_	usart.h	/^#define __USART2_H_$/;"	d
+__anon4db1579e0103	stm32f4xx.h	/^{$/;"	g
+__anon4db1579e0203	stm32f4xx.h	/^{$/;"	g
+__anon4db1579e0303	stm32f4xx.h	/^{$/;"	g
+__bss_end__	stm32_flash.ld	/^    __bss_end__ = _ebss;$/;"	s
+__bss_start__	stm32_flash.ld	/^    __bss_start__ = _sbss;$/;"	s
+__exidx_end	stm32_flash.ld	/^      __exidx_end = .;$/;"	s
+__exidx_start	stm32_flash.ld	/^    __exidx_start = .;$/;"	s
+__fini_array_end	stm32_flash.ld	/^    PROVIDE_HIDDEN (__fini_array_end = .);$/;"	s
+__fini_array_start	stm32_flash.ld	/^    PROVIDE_HIDDEN (__fini_array_start = .);$/;"	s
+__init_array_end	stm32_flash.ld	/^    PROVIDE_HIDDEN (__init_array_end = .);$/;"	s
+__init_array_start	stm32_flash.ld	/^    PROVIDE_HIDDEN (__init_array_start = .);$/;"	s
+__preinit_array_end	stm32_flash.ld	/^    PROVIDE_HIDDEN (__preinit_array_end = .);$/;"	s
+__preinit_array_start	stm32_flash.ld	/^    PROVIDE_HIDDEN (__preinit_array_start = .);$/;"	s
+_ebss	stm32_flash.ld	/^    _ebss = .;         \/* define a global symbol at bss end *\/$/;"	s
+_edata	stm32_flash.ld	/^    _edata = .;        \/* define a global symbol at data end *\/$/;"	s
+_end	stm32_flash.ld	/^    PROVIDE ( _end = . );$/;"	s
+_estack	stm32_flash.ld	/^_estack = 0x20020000;    \/* end of 128K RAM on AHB bus*\/$/;"	s
+_etext	stm32_flash.ld	/^    _etext = .;        \/* define a global symbols at end of code *\/$/;"	s
+_exit	stm32_flash.ld	/^    _exit = .;$/;"	s
+_sbss	stm32_flash.ld	/^    _sbss = .;         \/* define a global symbol at bss start *\/$/;"	s
+_sdata	stm32_flash.ld	/^    _sdata = .;        \/* create a global symbol at data start *\/$/;"	s
+_sidata	stm32_flash.ld	/^  _sidata = .;$/;"	s
+all	Makefile	/^all: $(PROJ_NAME).elf$/;"	t
+chk4TimeoutSYSTIM	delay.c	/^uint8_t chk4TimeoutSYSTIM(uint32_t btime, uint32_t period)$/;"	f	typeref:typename:uint8_t
+clean	Makefile	/^clean:$/;"	t
+deinitSYSTIM	delay.c	/^void deinitSYSTIM(void)$/;"	f	typeref:typename:void
+delay_ms	delay.c	/^void delay_ms(uint32_t ms)$/;"	f	typeref:typename:void
+delay_us	delay.c	/^void delay_us(uint32_t us)$/;"	f	typeref:typename:void
+end	stm32_flash.ld	/^    PROVIDE ( end = . );$/;"	s
+getADC	adc.c	/^uint16_t getADC(void)$/;"	f	typeref:typename:uint16_t
+getDNumMISC	misc.c	/^void getDNumMISC(uint8_t *dnum, uint32_t num)$/;"	f	typeref:typename:void
+getSYSTIM	delay.c	/^uint32_t getSYSTIM(void)$/;"	f	typeref:typename:uint32_t
+getStr4NumMISC	misc.c	/^void getStr4NumMISC(uint16_t type, uint32_t  * num, uint8_t * rstr)$/;"	f	typeref:typename:void
+hadc1	adc.c	/^ADC_HandleTypeDef hadc1;$/;"	v	typeref:typename:ADC_HandleTypeDef
+initADC1	adc.c	/^void initADC1(void)$/;"	f	typeref:typename:void
+initPWM	pwm.c	/^void initPWM(void)$/;"	f	typeref:typename:void
+initSYSTIM	delay.c	/^void initSYSTIM(void)$/;"	f	typeref:typename:void
+initUSART2	usart.c	/^void initUSART2(uint32_t baudrate)$/;"	f	typeref:typename:void
+main	main.c	/^int main(void) {$/;"	f	typeref:typename:int
+printUSART2	usart.c	/^void printUSART2(char *str, ... )$/;"	f	typeref:typename:void
+putDNumMISC	misc.c	/^void putDNumMISC(uint8_t *dnum, uint16_t *m, uint8_t *r_str)$/;"	f	typeref:typename:void
+putcharUSART2	usart.c	/^void putcharUSART2(uint8_t data)$/;"	f	typeref:typename:void
+setPWM	pwm.c	/^void setPWM(uint32_t ccr1,uint32_t ccr2,uint32_t ccr3,uint32_t ccr4)$/;"	f	typeref:typename:void
+sprintUSART2	usart.c	/^void sprintUSART2(uint8_t * str)$/;"	f	typeref:typename:void
+upload	Makefile	/^upload: proj$/;"	t

@@ -1,12 +1,9 @@
-# Put your stlink folder here so make burn will work.
-STLINK=../../stlink
-
 # Binaries will be generated with this name (.elf, .bin, .hex, etc)
 PROJ_NAME=main
 
 # Put your STM32F4 library code directory here
-STM_COMMON=~/pmps/sdk
-STM32CUBEPROG:= ~/pmps/stmcubeprog/bin/STM32_Programmer.sh -vb 1 -q -c port=SWD 
+STM_COMMON=../../pmps/sdk
+STM32CUBEPROG:=../../pmps/stmcubeprog/bin/STM32_Programmer.sh -vb 1 -q -c port=SWD 
 
 # Put your source files here (or *.c, etc)
 SRCS = main.c 

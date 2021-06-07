@@ -7,6 +7,6 @@
 
 
 void initPWM(void);
-void setPWM(uint32_t ccr1,uint32_t ccr2,uint32_t ccr3,uint32_t ccr4);
+void setPWM(uint32_t ccr1);
 
 #endif /* ifndef  */

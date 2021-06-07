@@ -5,37 +5,27 @@
 #include "stm32f4xx_hal.h"
 #include "usart.h"
 
+#define SHORT_DELAY 50
+#define LONG_DELAY 500
+
 void initADC1();
 void initADC2();
 void initPWM();
+void setPWM1(uint32_t);
+void setPWM2(uint32_t);
 uint32_t getADC1();
 uint32_t getADC2();
-void setPWM(uint32_t, uint32_t, uint32_t, uint32_t);
 
-uint32_t adc_timer;
+GPIO_InitTypeDef GPIO_InitStruct;
 
-void ldr() {
-  adc_timer = getSYSTIM();
-  uint32_t adc_value = getADC1();
-  /* printUSART2("-> ADC: Value D[%d] V[%d]\n", adc_value, */
-  /*             (adc_value * 3000) / 4095); */
-  if (adc_value < 3000)
-    HAL_GPIO_WritePin(GPIOD, GPIO_PIN_5, 0x0);
-  else
-    HAL_GPIO_WritePin(GPIOD, GPIO_PIN_5, 0x1);
-}
+const int min_width = 1050, max_width = 1950;
+const int max_temp = 40;
+const int lm35_scaling = 10;
 
-void temp() {
-  adc_timer = getSYSTIM();
-  uint32_t adc_value = getADC2();
-  /* printUSART2("-> ADC: Value D[%d] V[%d]\n", adc_value, */
-  /*             (adc_value * 3000) / 4095); */
-}
-
-int main(void) {
+void init() {
   HAL_Init();
 
-  GPIO_InitTypeDef GPIO_InitStruct;
+  // PD5 -> diode
   __HAL_RCC_GPIOD_CLK_ENABLE();
   GPIO_InitStruct.Pin = GPIO_PIN_5;
   GPIO_InitStruct.Mode = GPIO_MODE_OUTPUT_PP;
@@ -43,25 +33,58 @@ int main(void) {
   GPIO_InitStruct.Speed = GPIO_SPEED_HIGH;
   HAL_GPIO_Init(GPIOD, &GPIO_InitStruct);
 
+  // PA0(button) -> simulating humidity 
+  __HAL_RCC_GPIOA_CLK_ENABLE();
+  GPIO_InitStruct.Pin = GPIO_PIN_0;
+  GPIO_InitStruct.Mode = GPIO_MODE_INPUT;
+  GPIO_InitStruct.Pull = GPIO_NOPULL;
+  HAL_GPIO_Init(GPIOA, &GPIO_InitStruct);
+
   initUSART2(921600);
-  initSYSTIM();
   initADC2();
   initADC1();
   initPWM();
+}
 
-  adc_timer = getSYSTIM();
-  uint16_t arr[3] = {600, 1500, 2100};
-  int i = 0;
+void ldr() {
+  delay_ms(SHORT_DELAY);
+  uint32_t adc_value = getADC1();
+  HAL_GPIO_WritePin(GPIOD, GPIO_PIN_5, !(adc_value < 2850));
+}
 
+uint32_t temp() {
+  delay_ms(SHORT_DELAY);
+  uint32_t current_temp = 0;
+  int i = 10;
+  while (i--) {
+    delay_ms(20);
+    current_temp += getADC2();
+  }
+  current_temp /= (10 * lm35_scaling);
+  printUSART2("Value: %d\n", current_temp);
+  return current_temp;
+}
+
+void servo(uint32_t current_temp) {
+  setPWM1(((current_temp > max_temp && HAL_GPIO_ReadPin(GPIOA, GPIO_PIN_0))
+               ? max_width
+               : min_width));
+  delay_ms(LONG_DELAY);
+}
+
+void dc(uint32_t current_temp) {
+  delay_ms(SHORT_DELAY);
+  int percentage = (current_temp / max_temp) * 100;
+  setPWM2(20000 * percentage / 100);
+}
+
+int main(void) {
+  init();
   while (1) {
-    /* if (chk4TimeoutSYSTIM(adc_timer, 500) == SYSTIM_TIMEOUT) { */
-    /*   ldr(); */
-    /*   temp(); */
-    setPWM(arr[i], 0, 0, 0);
-    i = (++i % 3);
-    delay_ms(700);
-    printUSART2("Value: %d\n", arr[i]);
-    /* } */
+    ldr();
+    uint32_t current_temp = temp();
+    servo(current_temp);
+    dc(current_temp);
   }
 }
 

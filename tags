@@ -21,6 +21,7 @@ ErrorStatus	stm32f4xx.h	/^} ErrorStatus;$/;"	t	typeref:enum:__anon4db1579e0303
 FlagStatus	stm32f4xx.h	/^} FlagStatus, ITStatus;$/;"	t	typeref:enum:__anon4db1579e0103
 FunctionalState	stm32f4xx.h	/^} FunctionalState;$/;"	t	typeref:enum:__anon4db1579e0203
 GNUGCC	Makefile	/^GNUGCC = $(STM_COMMON)\/gcc-arm-none-eabi\/bin$/;"	m
+GPIO_InitStruct	main.c	/^GPIO_InitTypeDef GPIO_InitStruct;$/;"	v	typeref:typename:GPIO_InitTypeDef
 HardFault_Handler	stm32f4xx_it.c	/^void HardFault_Handler(void)$/;"	f	typeref:typename:void
 IS_FUNCTIONAL_STATE	stm32f4xx.h	/^#define IS_FUNCTIONAL_STATE(/;"	d
 ITStatus	stm32f4xx.h	/^} FlagStatus, ITStatus;$/;"	t	typeref:enum:__anon4db1579e0103
@@ -59,11 +60,10 @@ SET	stm32f4xx.h	/^  SET = !RESET$/;"	e	enum:__anon4db1579e0103
 SET_BIT	stm32f4xx.h	/^#define SET_BIT(/;"	d
 SIZE	Makefile	/^SIZE =  $(GNUGCC)\/arm-none-eabi-size$/;"	m
 SRCS	Makefile	/^SRCS = main.c $/;"	m
-STLINK	Makefile	/^STLINK=..\/..\/stlink$/;"	m
-STM32CUBEPROG	Makefile	/^STM32CUBEPROG:= ..\/..\/stmcubeprog\/bin\/STM32_Programmer.sh -vb 1 -q -c port=SWD $/;"	m
+STM32CUBEPROG	Makefile	/^STM32CUBEPROG:=..\/..\/pmps\/stmcubeprog\/bin\/STM32_Programmer.sh -vb 1 -q -c port=SWD $/;"	m
 STM32F4	stm32f4xx.h	/^#define STM32F4$/;"	d
 STM32F407xx	stm32f4xx.h	/^  #define STM32F407xx /;"	d
-STM_COMMON	Makefile	/^STM_COMMON=..\/..\/sdk$/;"	m
+STM_COMMON	Makefile	/^STM_COMMON=..\/..\/pmps\/sdk$/;"	m
 SUCCESS	stm32f4xx.h	/^  SUCCESS = 0U,$/;"	e	enum:__anon4db1579e0303
 SVC_Handler	stm32f4xx_it.c	/^void SVC_Handler(void)$/;"	f	typeref:typename:void
 SYSTIM_KEEP_ALIVE	delay.h	/^#define SYSTIM_KEEP_ALIVE	/;"	d
@@ -124,21 +124,31 @@ chk4TimeoutSYSTIM	delay.c	/^uint8_t chk4TimeoutSYSTIM(uint32_t btime, uint32_t p
 clean	Makefile	/^clean:$/;"	t
 deinitSYSTIM	delay.c	/^void deinitSYSTIM(void)$/;"	f	typeref:typename:void
 delay_ms	delay.c	/^void delay_ms(uint32_t ms)$/;"	f	typeref:typename:void
-delay_us	delay.c	/^void delay_us(uint32_t us)$/;"	f	typeref:typename:void
 end	stm32_flash.ld	/^    PROVIDE ( end = . );$/;"	s
-getADC	adc.c	/^uint16_t getADC(void)$/;"	f	typeref:typename:uint16_t
+getADC1	adc.c	/^uint16_t getADC1(void) {$/;"	f	typeref:typename:uint16_t
+getADC2	adc.c	/^uint16_t getADC2(void) {$/;"	f	typeref:typename:uint16_t
 getDNumMISC	misc.c	/^void getDNumMISC(uint8_t *dnum, uint32_t num)$/;"	f	typeref:typename:void
 getSYSTIM	delay.c	/^uint32_t getSYSTIM(void)$/;"	f	typeref:typename:uint32_t
 getStr4NumMISC	misc.c	/^void getStr4NumMISC(uint16_t type, uint32_t  * num, uint8_t * rstr)$/;"	f	typeref:typename:void
 hadc1	adc.c	/^ADC_HandleTypeDef hadc1;$/;"	v	typeref:typename:ADC_HandleTypeDef
-initADC1	adc.c	/^void initADC1(void)$/;"	f	typeref:typename:void
-initPWM	pwm.c	/^void initPWM(void)$/;"	f	typeref:typename:void
+hadc2	adc.c	/^ADC_HandleTypeDef hadc2;$/;"	v	typeref:typename:ADC_HandleTypeDef
+i	main.c	/^int i = 500;$/;"	v	typeref:typename:int
+init	main.c	/^void init() {$/;"	f	typeref:typename:void
+initADC1	adc.c	/^void initADC1(void) {$/;"	f	typeref:typename:void
+initADC2	adc.c	/^void initADC2(void) {$/;"	f	typeref:typename:void
+initPWM1	pwm.c	/^void initPWM1(void) {$/;"	f	typeref:typename:void
 initSYSTIM	delay.c	/^void initSYSTIM(void)$/;"	f	typeref:typename:void
 initUSART2	usart.c	/^void initUSART2(uint32_t baudrate)$/;"	f	typeref:typename:void
+ldr	main.c	/^void ldr() {$/;"	f	typeref:typename:void
 main	main.c	/^int main(void) {$/;"	f	typeref:typename:int
+max	main.c	/^const int min = 800, max = 1600;$/;"	v	typeref:typename:const int
+min	main.c	/^const int min = 800, max = 1600;$/;"	v	typeref:typename:const int
 printUSART2	usart.c	/^void printUSART2(char *str, ... )$/;"	f	typeref:typename:void
 putDNumMISC	misc.c	/^void putDNumMISC(uint8_t *dnum, uint16_t *m, uint8_t *r_str)$/;"	f	typeref:typename:void
 putcharUSART2	usart.c	/^void putcharUSART2(uint8_t data)$/;"	f	typeref:typename:void
-setPWM	pwm.c	/^void setPWM(uint32_t ccr1,uint32_t ccr2,uint32_t ccr3,uint32_t ccr4)$/;"	f	typeref:typename:void
+servo	main.c	/^void servo(uint32_t current_temp) {$/;"	f	typeref:typename:void
+setPWM1	pwm.c	/^void setPWM1(uint32_t ccr) {$/;"	f	typeref:typename:void
+setPWM2	pwm.c	/^void setPWM2(uint32_t ccr) {$/;"	f	typeref:typename:void
 sprintUSART2	usart.c	/^void sprintUSART2(uint8_t * str)$/;"	f	typeref:typename:void
+temp	main.c	/^uint32_t temp() {$/;"	f	typeref:typename:uint32_t
 upload	Makefile	/^upload: proj$/;"	t

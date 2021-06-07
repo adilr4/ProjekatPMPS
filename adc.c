@@ -4,19 +4,13 @@ ADC_HandleTypeDef hadc1;
 ADC_HandleTypeDef hadc2;
 
 void initADC1(void) {
-  // wwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwww
-  // ADC PC5 -> ADC123_IN15
-  //------------------------------------------------------------------
+  // ADC PC5 -> ADC1_IN15
 
   GPIO_InitTypeDef GPIO_InitStruct;
   __HAL_RCC_GPIOC_CLK_ENABLE();
   GPIO_InitStruct.Pin = GPIO_PIN_5;
   GPIO_InitStruct.Mode = GPIO_MODE_ANALOG;
   HAL_GPIO_Init(GPIOC, &GPIO_InitStruct);
-  // RCC->AHB1ENR |= RCC_AHB1ENR_GPIOAEN;
-  // RCC->APB2ENR |= RCC_APB2ENR_ADC1EN;
-  // GPIOA->MODER |= GPIO_MODER_MODER1;
-  // GPIOA->PUPDR &= ~GPIO_PUPDR_PUPDR1;
 
   ADC_ChannelConfTypeDef sConfig = {0};
 
@@ -43,19 +37,13 @@ void initADC1(void) {
 }
 
 void initADC2(void) {
-  // wwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwww
-  // ADC PC5 -> ADC123_IN15
-  //------------------------------------------------------------------
+  // ADC PC4 -> ADC1_IN14
 
   GPIO_InitTypeDef GPIO_InitStruct;
   __HAL_RCC_GPIOC_CLK_ENABLE();
   GPIO_InitStruct.Pin = GPIO_PIN_4;
   GPIO_InitStruct.Mode = GPIO_MODE_ANALOG;
   HAL_GPIO_Init(GPIOC, &GPIO_InitStruct);
-  // RCC->AHB1ENR |= RCC_AHB1ENR_GPIOAEN;
-  // RCC->APB2ENR |= RCC_APB2ENR_ADC1EN;
-  // GPIOA->MODER |= GPIO_MODER_MODER1;
-  // GPIOA->PUPDR &= ~GPIO_PUPDR_PUPDR1;
 
   ADC_ChannelConfTypeDef sConfig = {0};
 
@@ -85,7 +73,6 @@ uint16_t getADC1(void) {
   HAL_ADC_Start(&hadc1);
   while (HAL_ADC_PollForConversion(&hadc1, 10000) != HAL_OK)
     ;
-  // HAL_ADC_PollForConversion(&hadc1,10000);
 
   return HAL_ADC_GetValue(&hadc1);
 }
@@ -94,7 +81,6 @@ uint16_t getADC2(void) {
   HAL_ADC_Start(&hadc2);
   while (HAL_ADC_PollForConversion(&hadc2, 10000) != HAL_OK)
     ;
-  // HAL_ADC_PollForConversion(&hadc1,10000);
 
   return HAL_ADC_GetValue(&hadc2);
 }
